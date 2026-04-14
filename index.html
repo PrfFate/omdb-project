@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OmdbAPI — Discover Movies</title>
+    <meta name="description" content="Search and discover movies & TV shows with the OMDB API." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./src/styles.css" />
+  </head>
+  <body>
+    <!-- ── Top Bar ── -->
+    <header class="topbar">
+      <a href="/" class="logo" id="siteLogo">
+        <span class="logo-icon">🎬</span>
+        <span class="logo-text">Omdb<strong>API</strong></span>
+      </a>
+
+      <form id="searchForm" class="topbar-search">
+        <div class="search-box">
+          <svg class="search-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/>
+          </svg>
+          <input
+            id="movieQuery"
+            type="text"
+            placeholder="Search movies or TV shows…"
+            autocomplete="off"
+            required
+          />
+          <button id="clearButton" type="button" class="clear-btn" aria-label="Clear">✕</button>
+          <button id="searchButton" type="submit" class="search-submit">Search</button>
+        </div>
+      </form>
+
+      <div class="topbar-spacer"></div>
+    </header>
+
+    <!-- ── Status ── -->
+    <p id="statusMessage" class="status-message"></p>
+
+    <!-- ── Movie Grid ── -->
+    <main class="content">
+      <section id="resultList" class="movie-grid" aria-label="Search results"></section>
+    </main>
+
+    <!-- ── Detail Modal ── -->
+    <div id="detailsModal" class="modal" aria-hidden="true">
+      <div class="modal-content">
+        <button id="closeModal" class="close-modal">&times;</button>
+        <div id="detailsCard"></div>
+      </div>
+    </div>
+
+    <script type="module" src="./src/main.js"></script>
+  </body>
+</html>
